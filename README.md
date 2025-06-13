@@ -33,27 +33,25 @@
 
 3. Clonar el archivo `.env.template` y reombarlo a `.env`
 
-4. Cambiar las variables de entorno
-
-5. Levantar la base de datos
+4. Levantar la base de datos
 
 ```
 docker-compose up -d
 ```
 
-6. Levantar
+5. Levantar backend
 
 ```
 npm run start:dev
 ```
 
-7. Ingresar a la pagina de de documentacion
+6. Ingresar a la pagina de de documentacion
 
 ```
 http://localhost:3000/api
 ```
 
-8. Ejecutar el seed para tener datos de prueba
+7. Ejecutar el seed para tener datos de prueba
 
 # Tecnologias usadas.
 

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseUUIDPipe, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseUUIDPipe, Query, ParseIntPipe, DefaultValuePipe } from '@nestjs/common';
 import { OpportunitiesService } from './opportunities.service';
 import { CreateOpportunityDto } from './dto/create-opportunity.dto';
 import { UpdateOpportunityDto } from './dto/update-opportunity.dto';
@@ -19,8 +19,8 @@ export class OpportunitiesController {
   @Get()
   @ApiResponse({ status: 200, description: 'Found all Opportunities', type : Opportunity, isArray: true })
   findAll(
-      @Query('skip', ParseIntPipe) skip?: number,
-      @Query('take', ParseIntPipe) take?: number,
+      @Query('skip',new DefaultValuePipe(0), ParseIntPipe) skip: number,
+      @Query('take',new DefaultValuePipe(10), ParseIntPipe) take: number,
   ) {
     return this.opportunitiesService.findAll(skip, take);
   }
