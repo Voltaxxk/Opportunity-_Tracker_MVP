@@ -25,4 +25,11 @@ export class OpportunitiesController {
     return this.opportunitiesService.findAll(skip, take);
   }
 
+
+  @Get(':id')
+  @ApiResponse({ status: 200, description: 'Found Opportunity by ID', type : Opportunity })
+  findOne(@Param('id', ParseUUIDPipe) id: string) {
+    return this.opportunitiesService.findOne(id);
+  }
+
 }
