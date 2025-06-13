@@ -47,6 +47,14 @@ docker-compose up -d
 npm run start:dev
 ```
 
+7. Ingresar a la pagina de de documentacion
+
+```
+http://localhost:3000/api
+```
+
+8. Ejecutar el seed para tener datos de prueba
+
 # Tecnologias usadas.
 
 NestJS
